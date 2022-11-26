@@ -14,14 +14,14 @@
 * JavaScript.
 
 ### Ссылки на github repository и макет проекта в Figma:
-* [Repository](#)
+* [Repository](https://github.com/vecoweb22/mesto)
 * [Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 
 ### В дальнейшем:
 - Проект будет доработан и оптимизирован с использованием языка программирования JavaScript.
 
 ### Ссылка на github pages учебного проекта сайта:
-* [Веб-сайт проекта: Путешествие по России](#)
+* [Веб-сайт проекта: Место](https://vecoweb22.github.io/mesto)
 
 ### Технологии
 * HTML5

@@ -3,7 +3,7 @@
   padding-left: 22px;
   padding-right: 20px;
   height: 19px;
-  background-image: url(/images/heart.svg);
+  background-image: url(../../../images/heart.svg);
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
