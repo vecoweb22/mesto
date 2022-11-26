@@ -1,0 +1,19 @@
+.popup__user-job {
+  box-sizing: border-box;
+  max-width: 358px;
+  min-height: 27px;
+  margin: 29px auto 0;
+  padding-bottom: 7px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+@media (max-width: 580px) {
+  .popup__user-job {
+    max-width: 238px;
+    margin-top: 30px;
+  }
+}

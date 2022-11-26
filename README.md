@@ -1,17 +1,32 @@
 # Проект: Место
 
-### Обзор
+### Описание проекта
+Учебный проект [Яндекс.Практикум](https://practicum.yandex.ru/) - одностраничный сайт с адаптивным дизайном.
 
-* Figma
-* Картинки
+### Стэк технологий
+* HTML5;
+* CSS3 Flexbox;
+* CSS3 Grid Layout;
+* CSS3 Адаптивная Grid Layout и Flexbox верстка по макету ;
+* Media Queries для адаптивной верстки по БЭМ;
+* Методология БЭМ;
+* Файловая структура в соответствии с Nested БЭМ;
+* JavaScript.
 
-**Figma**
+### Ссылки на github repository и макет проекта в Figma:
+* [Repository](#)
+* [Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+### В дальнейшем:
+- Проект будет доработан и оптимизирован с использованием языка программирования JavaScript.
 
-**Картинки**
+### Ссылка на github pages учебного проекта сайта:
+* [Веб-сайт проекта: Путешествие по России](#)
 
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
-
-Удачи!
+### Технологии
+* HTML5
+* CSS3
+* BEM
+* Flexbox
+* Grid Layout
+* JavaScript
