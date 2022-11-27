@@ -7,8 +7,8 @@ const editProfile = document.querySelector(".profile__edit-button"); //пере�
 const closeButton = popupElement.querySelector(".popup__close-button"); //переменная закрыть редактирование
 const saveButton = document.querySelector(".popup__save-button"); //переменная кнопки сохранить
 //inputs
-let nameInput = document.querySelector(".popup__user-name"); // Воспользуйтесь инструментом .querySelector()
-let jobInput = document.querySelector(".popup__user-job"); // Воспользуйтесь инструментом .querySelector()
+let nameInput = document.querySelector("#popup__user-name"); // Воспользуйтесь инструментом .querySelector()
+let jobInput = document.querySelector("#popup__user-job"); // Воспользуйтесь инструментом .querySelector()
 
 //init value
 let userName = userNameText.innerText;
@@ -25,12 +25,12 @@ const writeUserDataToInputs = () => {
 };
 
 function openPopup() {
-  popupElement.classList.remove("popup_opened");
+  popupElement.style.display = 'flex'
   writeUserDataToInputs();
 }
 
 function closePopup() {
-  popupElement.classList.add("popup_opened");
+  popupElement.style.display = 'none'
 }
 
 editProfile.addEventListener("click", openPopup);

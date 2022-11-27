@@ -7,4 +7,16 @@
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.element__icon:hover {
+  opacity: 0.8;
+}
+
+
+.element__icon:active {
+  background-image: url(../../../images/heart_active.svg);
 }

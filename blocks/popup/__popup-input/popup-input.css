@@ -1,9 +1,8 @@
-.popup__user-job {
+.popup-input {
   box-sizing: border-box;
   max-width: 358px;
-  min-height: 27px;
-  margin: 29px auto 0;
-  padding-bottom: 7px;
+  margin: 30px auto 0;
+  padding-bottom: 13px;
   width: 100%;
   border: none;
   font-size: 14px;
@@ -12,8 +11,7 @@
 }
 
 @media (max-width: 580px) {
-  .popup__user-job {
+  .popup-input {
     max-width: 238px;
-    margin-top: 30px;
   }
 }
