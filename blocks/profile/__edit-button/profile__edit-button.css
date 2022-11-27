@@ -6,7 +6,8 @@
   margin-top: 37px;
   padding: 0;
   border: 1px solid #fff;
-  background: none;
+  background: transparent;
+  outline: none;
   cursor: pointer;
   grid-area: profile__edit-button;
 }

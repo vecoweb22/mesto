@@ -4,9 +4,10 @@
   width: 150px;
   height: 50px;
   margin-top: 35px;
+  padding: 0;
   border: 2px solid #fff;
-  border-radius: 2px;
-  background-color: #000;
+  outline: none;
+  background: transparent;
   grid-area: profile__add-button;
 }
 
@@ -19,6 +20,6 @@
 
 @media (max-width: 680px) {
   .profile__add-button {
-    margin: 6px auto 0;
+    margin: 15px auto 0;
   }
 }

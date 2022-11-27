@@ -9,11 +9,16 @@
   cursor: pointer;
 }
 
+.popup__close-button:hover {
+  opacity: 0.6;
+}
+
 .popup__close-button::before {
   position: absolute;
   content: "";
   height: 37px;
   top: 0;
+  background-color: #fff;
   border: 2px solid #fff;
   transform: rotate(45deg);
 }
@@ -23,6 +28,7 @@
   content: "";
   height: 37px;
   top: 0;
+  background-color: #fff;
   border: 2px solid #fff;
   transform: rotate(-45deg);
 }

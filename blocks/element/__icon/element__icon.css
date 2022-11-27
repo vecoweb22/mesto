@@ -1,15 +1,15 @@
 .element__icon {
   width: 22px;
   padding-left: 22px;
-  padding-right: 20px;
+  padding-right: 39px;
   height: 19px;
+  border: none;
+  outline: none;
   background-image: url(../../../images/heart.svg);
   background-position: center;
   background-repeat: no-repeat;
-  cursor: pointer;
-  border: none;
   background-color: transparent;
-  outline: none;
+  cursor: pointer;
 }
 
 .element__icon:hover {

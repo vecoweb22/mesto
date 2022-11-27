@@ -18,7 +18,8 @@
 
 @media (max-width: 680px) {
   .profile__subtitle {
+    text-align: center;
     font-size: 14px;
-    margin: 2px auto 0;
+    margin: 7px 0 0;
   }
 }
