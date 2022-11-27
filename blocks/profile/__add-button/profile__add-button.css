@@ -8,7 +8,12 @@
   border: 2px solid #fff;
   outline: none;
   background: transparent;
+  cursor: pointer;
   grid-area: profile__add-button;
+}
+
+.profile__add-button:hover {
+  opacity: 0.6;
 }
 
 @media (max-width: 740px) {

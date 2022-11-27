@@ -6,10 +6,14 @@
   margin-top: 37px;
   padding: 0;
   border: 1px solid #fff;
-  background: transparent;
+  background-color: transparent;
   outline: none;
   cursor: pointer;
   grid-area: profile__edit-button;
+}
+
+.profile__edit-button:hover {
+  opacity: 0.6;
 }
 
 @media (max-width: 740px) {
