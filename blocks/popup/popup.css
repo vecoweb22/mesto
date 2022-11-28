@@ -1,6 +1,6 @@
 .popup {
   position: fixed;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -9,4 +9,11 @@
   left: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 100;
+}
+
+@media (max-width: 320px) {
+  .popup {
+    padding: 0;
+    top: 13px;
+  }
 }

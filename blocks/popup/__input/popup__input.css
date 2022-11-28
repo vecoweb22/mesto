@@ -1,4 +1,4 @@
-.popup-input {
+.popup__input {
   box-sizing: border-box;
   max-width: 358px;
   margin: 30px auto 0;
@@ -14,7 +14,13 @@
 }
 
 @media (max-width: 580px) {
-  .popup-input {
+  .popup__input {
     max-width: 238px;
+  }
+}
+
+@media (max-width: 320px) {
+  .popup__input {
+    margin: 26px auto 0;
   }
 }

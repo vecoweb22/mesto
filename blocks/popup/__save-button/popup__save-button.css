@@ -29,3 +29,10 @@
     line-height: 121%;
   }
 }
+
+@media (max-width: 580px) {
+  .popup__save-button {
+    margin: 40px 0 25px;
+
+  }
+}

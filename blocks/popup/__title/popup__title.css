@@ -15,3 +15,9 @@
     line-height: 122%;
   }
 }
+
+@media (max-width: 580px) {
+  .popup__title {
+    margin: 28px 0 45px;
+  }
+}

@@ -8,19 +8,18 @@ const nameInput = document.querySelector('#popup__user-name');
 const jobInput = document.querySelector('#popup__user-job');
 
 function openPopup() {
-  popupElement.style.display = 'flex'
+  popupElement.classList.remove('popup_opened');
+  nameInput.value = userName.textContent;
+  jobInput.value = userJob.textContent;
 }
 
 function closePopup() {
-  popupElement.style.display = 'none'
+  popupElement.classList.add('popup_opened');
 }
 
-
 let formElement = document.querySelector('.popup__form');
-nameInput.value = userName.textContent;
-jobInput.value = userJob.textContent;
 
-function formSubmitHandler (evt) {
+function formSubmitHandler(evt) {
   evt.preventDefault();
   userName.textContent = nameInput.value;
   userJob.textContent = jobInput.value;
