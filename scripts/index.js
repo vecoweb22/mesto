@@ -8,13 +8,13 @@ const nameInput = document.querySelector('#popup__user-name');
 const jobInput = document.querySelector('#popup__user-job');
 
 function openPopup() {
-  popupElement.classList.remove('popup_opened');
+  popupElement.classList.remove('popup_closed');
   nameInput.value = userName.textContent;
   jobInput.value = userJob.textContent;
 }
 
 function closePopup() {
-  popupElement.classList.add('popup_opened');
+  popupElement.classList.add('popup_closed');
 }
 
 let formElement = document.querySelector('.popup__form');
