@@ -1,0 +1,13 @@
+.full-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  gap: 8px;
+}
+
+@media screen and (max-width: 577px){
+ .full-screen {
+  gap: 10px;
+ }
+}

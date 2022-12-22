@@ -1,7 +1,14 @@
 .main {
+  max-width: 880px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  /*margin: 0 auto;*/
+  gap: 51px;
+}
+
+@media screen and (max-width: 576px) {
+  .main {
+    gap: 36px;
+  }
 }

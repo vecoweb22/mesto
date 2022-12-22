@@ -9,88 +9,73 @@
 </head>
 
 <body class="root">
-<header class="header">
-  <img src="./images/logo.svg" alt="логотип" class="header__logo">
-</header>
-<main class="main">
-  <section class="profile">
-    <img src="./images/avatar.jpg" alt="аватар" class="profile__avatar">
-    <h1 class="profile__title">Жак-Ив Кусто</h1>
-    <p class="profile__subtitle">Исследователь океана</p>
-    <button type="button" class="profile__edit-button">
-      <img src="./images/edit-icon.svg" alt="редактировать" class="profile__edit-icon">
-    </button>
-    <button type="button" class="profile__add-button">
-      <img src="./images/add-icon.svg" alt="добавить" class="profile__add-icon">
-    </button>
-  </section>
-
-  <section class="elements">
-    <article class="element">
-      <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="фото" class="element__img">
-      <div class="element__item">
-        <h2 class="element__title">Карачаевск</h2>
-        <button type="button" class="element__icon"></button>
-      </div>
-    </article>
-
-    <article class="element">
-      <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="фото" class="element__img">
-      <div class="element__item">
-        <h2 class="element__title">Гора Эльбрус</h2>
-        <button type="button" class="element__icon"></button>
-      </div>
-    </article>
-
-    <article class="element">
-      <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="фото" class="element__img">
-      <div class="element__item">
-        <h2 class="element__title">Домбай</h2>
-        <button type="button" class="element__icon"></button>
-      </div>
-    </article>
-
-    <article class="element">
-      <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="фото" class="element__img">
-      <div class="element__item">
-        <h2 class="element__title">Гора Эльбрус</h2>
-        <button type="button" class="element__icon"></button>
-      </div>
-    </article>
-
-    <article class="element">
-      <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="фото" class="element__img">
-      <div class="element__item">
-        <h2 class="element__title">Домбай</h2>
-        <button type="button" class="element__icon"></button>
-      </div>
-    </article>
-
-    <article class="element">
-      <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="фото" class="element__img">
-      <div class="element__item">
-        <h2 class="element__title">Карачаево-Черкессия</h2>
-        <button type="button" class="element__icon"></button>
-      </div>
-    </article>
-  </section>
-</main>
-<footer class="footer">
-  <p class="footer__copyright">&#64; 2022 Mesto Russia</p>
-</footer>
-
-<div class="popup">
-  <div class="popup__window">
-    <button type="button" class="popup__close-button"></button>
-    <form name="popup__form" class="popup__form">
-      <h3 class="popup__title">Редактировать профиль</h3>
-      <input type="text" name="user-name" id="popup__user-name" class="popup__input">
-      <input type="text" name="user-job" id="popup__user-job" class="popup__input">
-      <button type="submit" class="popup__save-button">Сохранить</button>
-    </form>
+  <header class="header">
+    <img src="./images/logo.svg" alt="логотип" class="header__logo">
+  </header>
+  <main class="main">
+    <section class="profile">
+      <img src="./images/avatar.jpg" alt="аватар" class="profile__avatar">
+      <h1 class="profile__title">Жак-Ив Кусто</h1>
+      <p class="profile__subtitle">Исследователь океана</p>
+      <button type="button" class="profile__edit-button">
+        <img src="./images/edit-icon.svg" alt="редактировать" class="profile__edit-icon">
+      </button>
+      <button type="button" class="profile__add-button">
+        <img src="./images/add-icon.svg" alt="добавить" class="profile__add-icon">
+      </button>
+    </section>
+    <section class="gallery">
+      <ul class="gallery__list">
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&#64; 2022 Mesto Russia</p>
+  </footer>
+  <div class="popup" id="popup-user">
+    <div class="popup__window">
+      <button type="button" class="popup__close-button button_action_close" aria-label="Закрыть"></button>
+      <form name="edit-form" class="popup__form" id="popup_user_form">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <input type="text" name="user-name" id="popup_user-name" class="popup__input" placeholder="Имя" required>
+        <input type="text" name="user-job" id="popup_user-job" class="popup__input" placeholder="Профессия">
+        <button class="popup__save-button" id="popup__user_save-button" type="submit" aria-label="Сохранить">Сохранить</button>
+      </form>
+    </div>
   </div>
-</div>
-<script src="scripts/index.js"></script>
+  <div class="popup" id="popup-place">
+    <div class="popup__window">
+      <button type="button" class="popup__close-button button_action_close" aria-label="Закрыть"></button>
+      <form name="add-form" class="popup__form" id="popup_place_form">
+        <h3 class="popup__title">Новое место</h3>
+        <input type="text" name="place-title" id="popup_place-name" class="popup__input" placeholder="Название">
+        <input type="url" name="photo-link" id="popup_place-img" class="popup__input" placeholder="Ссылка на картинку"
+          required>
+        <button class="popup__save-button" id="popup__place_save-button" type="submit" aria-label="Создать">Создать</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_opened-img">
+    <figure class="full-screen">
+      <img class="full-screen__image">
+      <figcaption class="full-screen__caption"></figcaption>
+      <button type="button" class="popup__close-button button_action_close" aria-label="Закрыть"></button>
+    </figure>
+  </div>
+  <template id="gallery-item">
+    <li class="card">
+      <div class="card__img-container">
+        <img class="card__image">
+      </div>
+      <div class="card__footer">
+        <h2 class="card__title"></h2>
+        <button type="button" class="card__like" aria-label="Лайк"></button>
+      </div>
+      <button type="button" class="card__delete" aria-label="Удалить"></button>
+    </li>
+  </template>
+  <script src="scripts/cards.js"></script>
+  <script src="scripts/index.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 .popup__window {
   position: relative;
   max-width: 430px;
-  padding: 0 36px;
+  padding: 20px 36px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
@@ -10,6 +10,6 @@
 @media (max-width: 580px) {
   .popup__window {
     max-width: 282px;
-    padding: 0 22px;
+    padding: 20px 22px;
   }
 }

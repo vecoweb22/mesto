@@ -1,12 +1,18 @@
 .root {
+  max-width: 880px;
   display: flex;
   flex-direction: column;
   background: #000;
   color: #fff;
-  margin: 0 45px;
+  margin: 0 auto;
   font-family: "Inter", "Arial", "Helvetica", sans-serif;
 }
 
+@media (max-width: 970px) {
+  .root {
+    margin: 0 45px;
+  }
+}
 @media (max-width: 400px) {
   .root {
     margin: 0 auto;

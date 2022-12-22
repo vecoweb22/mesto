@@ -1,8 +1,8 @@
 .popup__input {
   box-sizing: border-box;
   max-width: 358px;
-  margin: 30px auto 0;
-  padding-bottom: 13px;
+  margin: 20px auto 16px;
+  padding-bottom: 7px;
   width: 100%;
   font-size: 14px;
   font-weight: 400;
