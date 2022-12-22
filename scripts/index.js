@@ -4,7 +4,7 @@ const addButton = main.querySelector('.profile__add-button');
 const popupEdit = document.querySelector('#popup-user');
 const popupAdd = document.querySelector('#popup-place');
 const popupImage = document.querySelector('.popup_opened-img');
-const closeButtons = document.querySelectorAll('.button_action_close');
+const closeButtons = document.querySelectorAll('.popup__close-button');
 const editForm = document.querySelector('[name="edit-form"]');
 const addForm = document.querySelector('[name="add-form"]');
 const username = main.querySelector('.profile__title');
