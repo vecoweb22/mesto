@@ -40,8 +40,8 @@
 @import url(../blocks/card/__delete/card__delete.css);
 /* popup__screen */
 @import url(../blocks/popup/__screen/popup__screen.css);
-@import url(../blocks/popup/__screen/_image/popup__screen_image.css);
-@import url(../blocks/popup/__screen/_caption/popup__screen_caption.css);
+@import url(../blocks/popup/__screen/popup__screen-image.css);
+@import url(../blocks/popup/__screen/popup__screen-caption.css);
 
 /* footer */
 @import url(../blocks/footer/footer.css);

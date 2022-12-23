@@ -15,8 +15,8 @@ const inputImgtitle = document.querySelector('[name="place-title"]');
 const iinputImgLink = document.querySelector('[name="photo-link"]');
 const gallery = main.querySelector('.gallery__list');
 const galleryTemplate = document.querySelector('#gallery-item').content.querySelector('.card');
-const fullImage = document.querySelector('.popup__screen_image');
-const fullImageCaption = document.querySelector('.popup__screen_caption');
+const fullImage = document.querySelector('.popup__screen-image');
+const fullImageCaption = document.querySelector('.popup__screen-caption');
 
 
 const openPopup = (popup) => {
