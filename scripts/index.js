@@ -15,8 +15,8 @@ const inputImgtitle = document.querySelector('[name="place-title"]');
 const iinputImgLink = document.querySelector('[name="photo-link"]');
 const gallery = main.querySelector('.gallery__list');
 const galleryTemplate = document.querySelector('#gallery-item').content.querySelector('.card');
-const fullImage = document.querySelector('.full-screen__image');
-const fullImageCaption = document.querySelector('.full-screen__caption');
+const fullImage = document.querySelector('.popup__screen_image');
+const fullImageCaption = document.querySelector('.popup__screen_caption');
 
 
 const openPopup = (popup) => {
@@ -35,12 +35,11 @@ const createElement = (item) => {
   const likeButton = galleryItem.querySelector('.card__like');
   const deleteButton = galleryItem.querySelector('.card__delete');
 
-  galleryItemImg.addEventListener('click', function () {
-    openPopup(popupImage)
-
+  galleryItemImg.addEventListener('click', () => {
     fullImage.src = item.link;
     fullImage.alt = galleryItemImg.alt
     fullImageCaption.textContent = item.title;
+    openPopup(popupImage)
   });
 
   likeButton.addEventListener('click', handleLikeButton);
@@ -49,7 +48,6 @@ const createElement = (item) => {
   galleryItemImg.src = item.link;
   galleryItemImg.alt = `${item.title}. Автор: ${username.textContent}`
   galleryItemTitle.textContent = item.title;
-
   return galleryItem;
 }
 
@@ -58,28 +56,22 @@ const renderItem = (item) => {
   gallery.prepend(element);
 }
 
-
 const formSubmitHandlerEdit = (evt) => {
   evt.preventDefault();
-
   username.textContent = inputUsername.value;
   userjob.textContent = inputUserjob.value;
-
   closePopup(popupEdit);
 }
 
 const formSubmitHandlerAdd = (evt) => {
   evt.preventDefault();
-
   const galleryItem = {
     title: inputImgtitle.value,
     link: iinputImgLink.value,
   }
-
   renderItem(galleryItem);
-
-  addForm.reset()
   closePopup(popupAdd);
+  addForm.reset();
 }
 
 const handleLikeButton = (evt) => {
@@ -95,17 +87,15 @@ galleryList.forEach(renderItem);
 addButton.addEventListener('click', () => openPopup(popupAdd));
 
 editButton.addEventListener('click', () => {
-  openPopup(popupEdit);
-
   inputUsername.value = username.textContent;
   inputUserjob.value = userjob.textContent;
+  openPopup(popupEdit);
 });
 
 editForm.addEventListener('submit', formSubmitHandlerEdit);
-
 addForm.addEventListener('submit', formSubmitHandlerAdd);
 
-closeButtons.forEach(function (item) {
+closeButtons.forEach((item) => {
   const close = item.closest('.popup');
   item.addEventListener('click', () => closePopup(close))
 });

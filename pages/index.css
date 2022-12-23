@@ -38,10 +38,10 @@
 @import url(../blocks/card/__like/_active/card__like_active.css);
 @import url(../blocks/card/__image/card__image.css);
 @import url(../blocks/card/__delete/card__delete.css);
-/* full-screen */
-@import url(../blocks/full-screen/full-screen.css);
-@import url(../blocks/full-screen/__image/full-screen__image.css);
-@import url(../blocks/full-screen/__caption/full-screen__caption.css);
+/* popup__screen */
+@import url(../blocks/popup/__screen/popup__screen.css);
+@import url(../blocks/popup/__screen/_image/popup__screen_image.css);
+@import url(../blocks/popup/__screen/_caption/popup__screen_caption.css);
 
 /* footer */
 @import url(../blocks/footer/footer.css);

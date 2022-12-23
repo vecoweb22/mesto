@@ -1,4 +1,4 @@
-.full-screen__image {
+.popup__screen_image {
   display: block;
   max-height: 75vh;
   max-width: 75vw;
@@ -7,6 +7,6 @@
   object-fit: cover;
 }
 
-.full-screen__image:hover {
+.popup__screen_image:hover {
   cursor: pointer;
 }

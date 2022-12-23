@@ -1,4 +1,4 @@
-.full-screen {
+.popup__screen {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 577px){
- .full-screen {
+ .popup__screen {
   gap: 10px;
  }
 }
