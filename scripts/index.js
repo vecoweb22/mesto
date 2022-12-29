@@ -12,79 +12,119 @@ const userjob = main.querySelector('.profile__subtitle');
 const inputUsername = document.querySelector('[name="user-name"]');
 const inputUserjob = document.querySelector('[name="user-job"]');
 const inputImgtitle = document.querySelector('[name="place-title"]');
-const iinputImgLink = document.querySelector('[name="photo-link"]');
+const inputImgLink = document.querySelector('[name="photo-link"]');
 const gallery = main.querySelector('.gallery__list');
 const galleryTemplate = document.querySelector('#gallery-item').content.querySelector('.card');
 const fullImage = document.querySelector('.popup__screen-image');
 const fullImageCaption = document.querySelector('.popup__screen-caption');
-
+const popups = document.querySelectorAll('.popup');
 
 const openPopup = (popup) => {
   popup.classList.add('popup_opened');
+  document.addEventListener('keyup', handlerKeyUp);
 }
 
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keyup', handlerKeyUp);
 }
 
-const createElement = (item) => {
-  const galleryItem = galleryTemplate.cloneNode(true);
-  console.log(galleryItem);
-  const galleryItemTitle = galleryItem.querySelector('.card__title');
-  const galleryItemImg = galleryItem.querySelector('.card__image');
-  const likeButton = galleryItem.querySelector('.card__like');
-  const deleteButton = galleryItem.querySelector('.card__delete');
-
-  galleryItemImg.addEventListener('click', () => {
-    fullImage.src = item.link;
-    fullImage.alt = galleryItemImg.alt
-    fullImageCaption.textContent = item.title;
-    openPopup(popupImage)
-  });
-
-  likeButton.addEventListener('click', handleLikeButton);
-  deleteButton.addEventListener('click', handleDeleteButton);
-
-  galleryItemImg.src = item.link;
-  galleryItemImg.alt = `${item.title}. Автор: ${username.textContent}`
-  galleryItemTitle.textContent = item.title;
-  return galleryItem;
+const handlerKeyUp = (evt) => {
+  if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
 }
 
-const renderItem = (item) => {
-  const element = createElement(item);
-  gallery.prepend(element);
+class ItemBuilder {
+  constructor(data, template) {
+    this._title = data.title;
+    this._imgLink = data.link;
+    this._template = template;
+  }
+
+  _getTemplateCard() {
+    const cardItem = document
+      .querySelector(this._template)
+      .content
+      .querySelector('.card')
+      .cloneNode(true);
+    return cardItem;
+  }
+
+  createItem() {
+    this._item = this._getTemplateCard();
+    this._item.querySelector('.card__image').src = this._imgLink;
+    this._item.querySelector('.card__title').textContent = this._title;
+    this._item.querySelector('.card__image').alt = `${this._title}. Автор: ${username.textContent}`
+    this._setEventListeners();
+    return this._item;
+  }
+
+  _handlerDeleteButton() {
+    this._item.remove();
+  }
+
+  _handlerLikeButton() {
+    this._item.querySelector('.card__like').classList.toggle('card__like_active');
+  }
+
+  _handleOpenScreen() {
+    fullImage.src = this._imgLink;
+    fullImage.alt = `${this._title}. Автор: ${username.textContent}`
+    fullImageCaption.textContent = this._title;
+    openPopup(popupImage);
+  }
+
+  _setEventListeners() {
+    this._item.querySelector('.card__image').addEventListener('click', () => {
+      this._handleOpenScreen();
+    });
+
+    this._item.querySelector('.card__delete').addEventListener('click', () => {
+      this._handlerDeleteButton();
+    });
+
+    this._item.querySelector('.card__like').addEventListener('click', () => {
+      this._handlerLikeButton();
+    });
+  }
 }
 
-const formSubmitHandlerEdit = (evt) => {
-  evt.preventDefault();
+const createCard = (item) => {
+  const card = new ItemBuilder(item, '#gallery-item');
+  const cardItem = card.createItem();
+  document.querySelector('.gallery__list').prepend(cardItem);
+}
+
+galleryList.forEach((item) => {
+  createCard(item);
+});
+
+const submitFormEdit = () => {
   username.textContent = inputUsername.value;
   userjob.textContent = inputUserjob.value;
   closePopup(popupEdit);
 }
 
-const formSubmitHandlerAdd = (evt) => {
-  evt.preventDefault();
+const submitFormAdd = () => {
   const galleryItem = {
     title: inputImgtitle.value,
-    link: iinputImgLink.value,
+    link: inputImgLink.value,
   }
-  renderItem(galleryItem);
+  createCard(galleryItem);
   closePopup(popupAdd);
   addForm.reset();
 }
 
-const handleLikeButton = (evt) => {
-  evt.target.classList.toggle('card__like_active')
-};
+addButton.addEventListener('click', () => {
+  openPopup(popupAdd);
+  addForm.reset();
 
-const handleDeleteButton = (evt) => {
-  evt.target.closest('.card').remove()
-};
-
-galleryList.forEach(renderItem);
-
-addButton.addEventListener('click', () => openPopup(popupAdd));
+  const button = popupAdd.querySelector('.popup__save-button');
+  button.classList.add('popup__save-button_inactive');
+  button.disabled = 'disabled';
+});
 
 editButton.addEventListener('click', () => {
   inputUsername.value = username.textContent;
@@ -92,12 +132,27 @@ editButton.addEventListener('click', () => {
   openPopup(popupEdit);
 });
 
-editForm.addEventListener('submit', formSubmitHandlerEdit);
-addForm.addEventListener('submit', formSubmitHandlerAdd);
+editForm.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  submitFormEdit();
+});
+
+addForm.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  submitFormAdd();
+});
 
 closeButtons.forEach((item) => {
   const close = item.closest('.popup');
-  item.addEventListener('click', () => closePopup(close))
+  item.addEventListener('click', () => {
+    closePopup(close)
+  })
 });
 
-fullImage.addEventListener('click', () => closePopup(popupImage));
+popups.forEach((popup) => {
+  popup.addEventListener('click', (evt) => {
+    if (evt.target === popup) {
+      closePopup(popup);
+    }
+  })
+})
