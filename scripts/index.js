@@ -17,6 +17,7 @@ const gallery = main.querySelector('.gallery__list');
 const galleryTemplate = document.querySelector('#gallery-item').content.querySelector('.card');
 const fullImage = document.querySelector('.popup__screen-image');
 const fullImageCaption = document.querySelector('.popup__screen-caption');
+const button = popupAdd.querySelector('.popup__save-button');
 const popups = document.querySelectorAll('.popup');
 
 const openPopup = (popup) => {
@@ -91,10 +92,11 @@ class ItemBuilder {
   }
 }
 
-const createCard = (item) => {
+  function createCard (item) {
   const card = new ItemBuilder(item, '#gallery-item');
   const cardItem = card.createItem();
-  document.querySelector('.gallery__list').prepend(cardItem);
+  gallery.prepend(cardItem);
+  return cardItem;
 }
 
 galleryList.forEach((item) => {
@@ -121,7 +123,7 @@ addButton.addEventListener('click', () => {
   openPopup(popupAdd);
   addForm.reset();
 
-  const button = popupAdd.querySelector('.popup__save-button');
+
   button.classList.add('popup__save-button_inactive');
   button.disabled = 'disabled';
 });
@@ -150,9 +152,12 @@ closeButtons.forEach((item) => {
 });
 
 popups.forEach((popup) => {
-  popup.addEventListener('click', (evt) => {
-    if (evt.target === popup) {
-      closePopup(popup);
+  popup.addEventListener('mousedown', (evt) => {
+    if (evt.target.classList.contains('popup_opened')) {
+      closePopup(popup)
+    }
+    if (evt.target.classList.contains('popup__close')) {
+      closePopup(popup)
     }
   })
 })

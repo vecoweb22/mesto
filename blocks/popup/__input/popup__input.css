@@ -1,7 +1,7 @@
 .popup__input {
   box-sizing: border-box;
   max-width: 358px;
-  margin: 20px auto 16px;
+  margin: 20px auto 5px;
   padding-bottom: 7px;
   width: 100%;
   font-size: 14px;
@@ -13,11 +13,11 @@
   color: #000;
 }
 
-@media (max-width: 580px) {
+/* @media (max-width: 580px) {
   .popup__input {
     max-width: 238px;
   }
-}
+} */
 
 @media (max-width: 320px) {
   .popup__input {
