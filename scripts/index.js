@@ -57,7 +57,7 @@ class ItemBuilder {
     this._item = this._getTemplateCard();
     this._item.querySelector('.card__image').src = this._imgLink;
     this._item.querySelector('.card__title').textContent = this._title;
-    this._item.querySelector('.card__image').alt = `${this._title}. Автор: ${username.textContent}`
+    this._item.querySelector('.card__image').alt = `${this._title}. Автор: ${username.textContent}`;
     this._setEventListeners();
     return this._item;
   }
@@ -92,16 +92,19 @@ class ItemBuilder {
   }
 }
 
-  function createCard (item) {
+function createCard(item) {
   const card = new ItemBuilder(item, '#gallery-item');
   const cardItem = card.createItem();
-  gallery.prepend(cardItem);
   return cardItem;
 }
 
-galleryList.forEach((item) => {
-  createCard(item);
-});
+// NEW function
+const prependCardItems = (cardItems) => {
+  gallery.prepend(...cardItems);
+}
+
+const galleryCardItems = galleryList.map(createCard);
+prependCardItems(galleryCardItems);
 
 const submitFormEdit = () => {
   username.textContent = inputUsername.value;
@@ -114,7 +117,8 @@ const submitFormAdd = () => {
     title: inputImgtitle.value,
     link: inputImgLink.value,
   }
-  createCard(galleryItem);
+  const newCard = createCard(galleryItem);
+  prependCardItems([newCard])
   closePopup(popupAdd);
   addForm.reset();
 }
@@ -144,19 +148,19 @@ addForm.addEventListener('submit', (evt) => {
   submitFormAdd();
 });
 
-closeButtons.forEach((item) => {
-  const close = item.closest('.popup');
-  item.addEventListener('click', () => {
-    closePopup(close)
-  })
-});
+// closeButtons.forEach((item) => {
+//   const close = item.closest('.popup');
+//   item.addEventListener('click', () => {
+//     closePopup(close)
+//   })
+// });
 
 popups.forEach((popup) => {
   popup.addEventListener('mousedown', (evt) => {
     if (evt.target.classList.contains('popup_opened')) {
       closePopup(popup)
     }
-    if (evt.target.classList.contains('popup__close')) {
+    if (evt.target.classList.contains('popup__close-button')) {
       closePopup(popup)
     }
   })
