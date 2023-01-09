@@ -98,7 +98,6 @@ function createCard(item) {
   return cardItem;
 }
 
-// NEW function
 const prependCardItems = (cardItems) => {
   gallery.prepend(...cardItems);
 }
