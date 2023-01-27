@@ -12,13 +12,14 @@
 * Методология БЭМ;
 * Файловая структура в соответствии с Nested БЭМ;
 * JavaScript.
+* ООП и модули в JavaScript
 
 ### Ссылки на github repository и макет проекта в Figma:
 * [Repository](https://github.com/vecoweb22/mesto)
 * [Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 
 ### В дальнейшем:
-- Проект будет доработан и оптимизирован с использованием языка программирования JavaScript.
+- Проект будет доработан и оптимизирован с использованием JavaScript.
 
 ### Ссылка на github pages учебного проекта сайта:
 * [Веб-сайт проекта: Место](https://vecoweb22.github.io/mesto)
@@ -30,3 +31,4 @@
 * Flexbox
 * Grid Layout
 * JavaScript
+* ООП и модули в JavaScript. Рефакторинг кода.
