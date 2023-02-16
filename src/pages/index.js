@@ -25,29 +25,35 @@ const fullImg = new PopupWithImage({ popupSelector: '.popup_opened-img' }, '.pop
 
 const user = new UserInfo({ about: '.profile__subtitle', username: '.profile__title' });
 
-const cardsList = new Section({items: galleryList, renderer: (cardData) => {
+const cardsList = new Section(
+  {
+    items: galleryList,
+    renderer: (cardData) => {
       cardsList.addItem(createCard(cardData));
-    }}, '.gallery__list');
+    },
+  },
+  '.gallery__list'
+);
 
 const popupEdit = new PopupWithForm({
   popupSelector: '#popup-user',
   inputSelector: '.popup__input',
   handleFormSubmit: (formData) => {
-    const userInfoDataInput = {username: formData['user-name'], about: formData['user-job']}
+    const userInfoDataInput = { username: formData['user-name'], about: formData['user-job'] };
     user.setUserInfo(userInfoDataInput);
     popupEdit.close();
-  }
+  },
 });
 
 const popupAdd = new PopupWithForm({
   popupSelector: '#popup-place',
   inputSelector: '.popup__input',
   handleFormSubmit: (formData) => {
-    const inputCardData = {title: formData['place-title'], link: formData['photo-link']}
-    const newCard = createCard(inputCardData)
+    const inputCardData = { title: formData['place-title'], link: formData['photo-link'] };
+    const newCard = createCard(inputCardData);
     cardsList.addItem(newCard);
     popupAdd.close();
-  }
+  },
 });
 
 const handleAddButtonClick = () => {
