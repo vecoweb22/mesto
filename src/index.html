@@ -4,25 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" src="./scripts/index.js" defer></script>
   <title>Место</title>
-  <link rel="stylesheet" href="./pages/index.css">
 </head>
 
 <body class="root">
   <header class="header">
-    <img src="./images/logo.svg" alt="логотип" class="header__logo">
+    <img src="<%=require('./images/logo.svg')%>" alt="логотип" class="header__logo">
   </header>
   <main class="main">
     <section class="profile">
-      <img src="./images/avatar.jpg" alt="аватар" class="profile__avatar">
+      <img src="<%=require('./images/avatar.jpg')%>" alt="аватар" class="profile__avatar">
       <h1 class="profile__title">Жак-Ив Кусто</h1>
       <p class="profile__subtitle">Исследователь океана</p>
       <button type="button" class="profile__edit-button" aria-label="редактировать профиль">
-        <img src="./images/edit-icon.svg" alt="редактировать" class="profile__edit-icon">
+        <img src="<%=require('./images/edit-icon.svg')%>" alt="редактировать" class="profile__edit-icon">
       </button>
       <button type="button" class="profile__add-button" aria-label="добавить картинку">
-        <img src="./images/add-icon.svg" alt="добавить" class="profile__add-icon">
+        <img src="<%=require('./images/add-icon.svg')%>" alt="добавить" class="profile__add-icon">
       </button>
     </section>
     <section class="gallery">
