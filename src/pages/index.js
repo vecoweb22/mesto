@@ -95,9 +95,6 @@ const user = new UserInfo({
   avatar: avatar,
 });
 
-console.log();
-console.log();
-console.log();
 
 buttonEdit.addEventListener(
   'click',
@@ -173,14 +170,14 @@ Promise.all([api.getRealUserInfo(), api.getInitialCards()])
     user.setUserInfo(userProfile);
     const popupEditProfile = document.querySelector('.popup-user');
     const error_title = 'При получении данных с сервера';
-    const name = popupEditProfile.querySelector('#popup_user-name');
-    const about = popupEditProfile.querySelector('#popup_user-job');
+    const name = popupEditProfile.querySelector('#popup_username');
+    const about = popupEditProfile.querySelector('#popup_userjob');
     if (name) {
       name.value = userProfile.name;
-    } else console.log(error_title + ' не найден Edit popup_user-name');
+    } else console.log(error_title + ' не найден Edit popup_username');
     if (about) {
       about.value = userProfile.about;
-    } else console.log(error_title + ' не найден Edit popup_user-job');
+    } else console.log(error_title + ' не найден Edit popup_userjob');
     userId = userProfile._id;
     cardList.renderItems(cards);
   })
