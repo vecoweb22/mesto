@@ -32,3 +32,4 @@
 * Grid Layout
 * JavaScript
 * ООП и модули в JavaScript. Рефакторинг кода.
+* WEB pack
