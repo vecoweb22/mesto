@@ -170,14 +170,14 @@ Promise.all([api.getRealUserInfo(), api.getInitialCards()])
     user.setUserInfo(userProfile);
     const popupEditProfile = document.querySelector('.popup-user');
     const error_title = 'При получении данных с сервера';
-    const name = popupEditProfile.querySelector('#popup_username');
-    const about = popupEditProfile.querySelector('#popup_userjob');
+    const name = popupEditProfile.querySelector('#popup__username');
+    const about = popupEditProfile.querySelector('#popup__userjob');
     if (name) {
       name.value = userProfile.name;
-    } else console.log(error_title + ' не найден Edit popup_username');
+    } else console.log(error_title + ' не найден Edit popup__username');
     if (about) {
       about.value = userProfile.about;
-    } else console.log(error_title + ' не найден Edit popup_userjob');
+    } else console.log(error_title + ' не найден Edit popup__userjob');
     userId = userProfile._id;
     cardList.renderItems(cards);
   })
