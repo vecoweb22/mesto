@@ -1,11 +1,15 @@
-const main = document.querySelector('.main');
-export const buttonEdit = main.querySelector('.profile__edit-button');
-export const username = main.querySelector('.profile__title');
+export const buttonEdit = document.querySelector('.profile__edit-button');
+export const buttonAdd = document.querySelector('.profile__add-button');
+export const btnEditAvatar = document.querySelector('.profile__edit-avatar');
+export const username = document.querySelector('.profile__title');
+export const userAbout = document.querySelector('.profile__subtitle');
+export const avatar = document.querySelector('.profile__img');
 export const formEdit = document.querySelector('[name="edit-form"]');
 export const usernameInput = document.querySelector('[name="user-name"]');
 export const userjobInput = document.querySelector('[name="user-job"]');
-export const buttonAdd = main.querySelector('.profile__add-button');
-export const formAdd = document.querySelector('[name="add-form"]');
+export const formEditProfile = document.forms.editForm;
+export const formAddProfile = document.forms.addForm;
+export const formUpdateAvatar = document.forms.editAvatarForm;
 
 export const validationConfig = {
   formSelector: '.popup__form',

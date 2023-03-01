@@ -1,17 +1,16 @@
 export class Section {
-  constructor({ items, renderer }, containerSelector) {
-    this.items = items;
+  constructor({ renderer }, containerSelector) {
     this._renderer = renderer;
     this._container = document.querySelector(containerSelector);
   }
 
-  renderItems() {
-    this.items.forEach((item) => {
-      this._renderer(item);
-    });
-  }
+  addItem = (item) => {
+    this._container.prepend(item);
+  };
 
-  addItem(element) {
-    this._container.prepend(element);
+  renderItems(items) {
+    items.reverse().forEach((item) => {
+      return this._renderer(item);
+    });
   }
 }

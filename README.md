@@ -13,6 +13,7 @@
 * Файловая структура в соответствии с Nested БЭМ;
 * JavaScript.
 * ООП и модули в JavaScript
+* REST API
 
 ### Ссылки на github repository и макет проекта в Figma:
 * [Repository](https://github.com/vecoweb22/mesto)
@@ -32,4 +33,5 @@
 * Grid Layout
 * JavaScript
 * ООП и модули в JavaScript. Рефакторинг кода.
-* WEB pack
+* Webpack
+* API
