@@ -1,15 +1,15 @@
 import './index.css';
 import {
   avatar,
-  buttonEdit,
-  buttonAdd,
-  validationConfig,
-  username,
-  userAbout,
   btnEditAvatar,
-  formEditProfile,
+  buttonAdd,
+  buttonEdit,
   formAddProfile,
+  formEditProfile,
   formUpdateAvatar,
+  userAbout,
+  username,
+  validationConfig,
 } from '../utils/constants.js';
 import { FormValidator } from '../components/FormValidator.js';
 import { Section } from '../components/Section.js';
@@ -33,7 +33,7 @@ function createCard(data) {
         card.like();
         card.likesCount(response);
       } catch (error) {
-        return console.log(`Ошибка: ${error}`);
+        console.log(`Ошибка: ${error}`);
       }
     },
     async () => {
@@ -42,7 +42,7 @@ function createCard(data) {
         card.dislike();
         card.likesCount(response);
       } catch (error) {
-        return console.log(`Ошибка: ${error}`);
+        console.log(`Ошибка: ${error}`);
       }
     },
     () => {
@@ -62,7 +62,7 @@ async function handleSubmitFormEditProfile(data) {
     const userProfile = await api.editProfileUserInfo(data);
     user.setUserInfo(userProfile);
   } catch (error) {
-    return console.log(`Ошибка: ${error}`);
+    console.log(`Ошибка: ${error}`);
   }
 }
 
@@ -71,7 +71,7 @@ async function handleSubmitFormUpdateAvatar(data) {
     const userProfile = await api.updateProfileUserAvatar(data);
     user.setUserInfo(userProfile);
   } catch (error) {
-    return console.log(`Ошибка: ${error}`);
+    console.log(`Ошибка: ${error}`);
   }
 }
 
@@ -80,21 +80,36 @@ async function handleSubmitFormAddCard(data) {
     const newCard = await api.addNewCard(data);
     cardList.addItem(createCard(newCard));
   } catch (error) {
-    return console.log(`Ошибка: ${error}`);
+    console.log(`Ошибка: ${error}`);
   }
 }
 
+function getSubmitHandlerCb(dataCallback, popupFormInstance) {
+  return (data) => {
+    dataCallback(data)
+      .then(() => {
+        popupFormInstance.close();
+      })
+      .finally(() => {
+        popupFormInstance.returnInitSubmitterText();
+      });
+  };
+}
+
 const popupImage = new PopupWithImage('.popup_opened-img');
-const popupAdd = new PopupWithForm('.popup-place', handleSubmitFormAddCard);
-const popupEdit = new PopupWithForm('.popup-user', handleSubmitFormEditProfile);
-const popupAvatar = new PopupWithForm('.edit-avatar', handleSubmitFormUpdateAvatar);
+const popupAdd = new PopupWithForm('.popup-place');
+const popupEdit = new PopupWithForm('.popup-user');
+const popupAvatar = new PopupWithForm('.edit-avatar');
+
+popupAdd.setSubmitHandlerCb(getSubmitHandlerCb(handleSubmitFormAddCard, popupAdd));
+popupEdit.setSubmitHandlerCb(getSubmitHandlerCb(handleSubmitFormEditProfile, popupEdit));
+popupAvatar.setSubmitHandlerCb(getSubmitHandlerCb(handleSubmitFormUpdateAvatar, popupAvatar));
 
 const user = new UserInfo({
   name: username,
   about: userAbout,
   avatar: avatar,
 });
-
 
 buttonEdit.addEventListener(
   'click',
@@ -125,7 +140,6 @@ buttonAdd.addEventListener(
   false
 );
 
-
 const validatorFormEditProfile = new FormValidator(validationConfig, formEditProfile);
 validatorFormEditProfile.enableValidation();
 
@@ -154,7 +168,6 @@ const cardList = new Section(
   },
   '.gallery__list'
 );
-
 
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-60',
